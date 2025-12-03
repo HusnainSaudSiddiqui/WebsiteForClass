@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Expendable Childhoods? Child Labor and American War</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A multimodal exploration of how U.S. wartime history and security policy intersect with child labor, from factories to child soldiers.">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Georgia', 'Times New Roman', serif;
+      line-height: 1.8;
+      color: #2c3e50;
+      background: #fafafa;
+      overflow-x: hidden;
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      width: 100%;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, rgba(102, 126, 234, 0.95) 0%, rgba(118, 75, 162, 0.95) 100%),
+                  url('https://cdn.loc.gov/service/pnp/nclc/00000/00020r.jpg') center/cover;
+      color: white;
+      text-align: center;
+      padding: 4rem 2rem;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 0;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 1000px;
+      animation: fadeInUp 1.2s ease-out;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hero h1 {
+      font-size: 5rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+      letter-spacing: -2px;
+      font-family: 'Georgia', serif;
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+      font-weight: 300;
+      margin-bottom: 2.5rem;
+      opacity: 0.98;
+      font-style: italic;
+    }
+
+    .hero p {
+      font-size: 1.4rem;
+      max-width: 850px;
+      margin: 0 auto 3rem;
+      line-height: 2;
+      opacity: 0.98;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+    }
+
+    .audio-player {
+      margin-top: 3rem;
+      background: rgba(255,255,255,0.25);
+      padding: 2rem;
+      border-radius: 16px;
+      backdrop-filter: blur(15px);
+      border: 1px solid rgba(255,255,255,0.3);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+    }
+
+    .audio-player audio {
+      width: 100%;
+      max-width: 600px;
+      margin-top: 1rem;
+    }
+
+    /* Main Content */
+    main {
+      width: 100%;
+    }
+
+    .section {
+      width: 100%;
+      padding: 8rem 2rem;
+      position: relative;
+    }
+
+    .section:nth-child(even) {
+      background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+    }
+
+    .section-content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section h2 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 3rem;
+      color: #1a1a1a;
+      line-height: 1.2;
+      font-family: 'Georgia', serif;
+      position: relative;
+      padding-bottom: 1.5rem;
+    }
+
+    .section h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100px;
+      height: 4px;
+      background: linear-gradient(90deg, #667eea, #764ba2);
+      border-radius: 2px;
+    }
+
+    .section h3 {
+      font-size: 2rem;
+      font-weight: 600;
+      margin: 3rem 0 1.5rem;
+      color: #2c3e50;
+      font-family: 'Georgia', serif;
+    }
+
+    .section p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      color: #4a5568;
+      line-height: 2;
+      text-align: justify;
+    }
+
+    .section strong {
+      color: #1a1a1a;
+      font-weight: 700;
+      background: linear-gradient(120deg, rgba(102, 126, 234, 0.2) 0%, rgba(102, 126, 234, 0.2) 100%);
+      padding: 0 4px;
+    }
+
+    /* Quote Block */
+    blockquote {
+      border-left: 6px solid #667eea;
+      padding: 3rem 3rem 3rem 4rem;
+      margin: 3rem 0;
+      background: linear-gradient(135deg, #f0f4ff 0%, #e8edff 100%);
+      border-radius: 12px;
+      font-size: 1.5rem;
+      font-style: italic;
+      color: #2c3e50;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      position: relative;
+    }
+
+    blockquote::before {
+      content: '"';
+      position: absolute;
+      left: 1.5rem;
+      top: 1rem;
+      font-size: 5rem;
+      color: #667eea;
+      opacity: 0.3;
+      font-family: Georgia, serif;
+    }
+
+    /* Image Gallery */
+    .image-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2.5rem;
+      margin: 4rem 0;
+    }
+
+    .gallery-item {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      background: #e0e0e0;
+      cursor: pointer;
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-12px) scale(1.02);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+      display: block;
+      filter: grayscale(20%);
+      transition: filter 0.4s ease;
+    }
+
+    .gallery-item:hover img {
+      filter: grayscale(0%);
+    }
+
+    .gallery-caption {
+      padding: 2rem;
+      background: white;
+      font-size: 1rem;
+      color: #4a5568;
+      font-style: italic;
+      border-top: 3px solid #667eea;
+      line-height: 1.6;
+    }
+
+    /* Timeline */
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+      margin: 4rem 0;
+      position: relative;
+      padding-left: 4rem;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: linear-gradient(180deg, #667eea, #764ba2, #667eea);
+      border-radius: 2px;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding: 2.5rem;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+      margin-left: 3rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .timeline-item:hover {
+      transform: translateX(10px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.18);
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -3.5rem;
+      top: 2.5rem;
+      width: 20px;
+      height: 20px;
+      background: #667eea;
+      border-radius: 50%;
+      border: 4px solid white;
+      box-shadow: 0 0 0 4px #667eea, 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .timeline-item strong {
+      display: block;
+      font-size: 1.4rem;
+      color: #667eea;
+      margin-bottom: 0.8rem;
+      font-family: 'Georgia', serif;
+    }
+
+    /* Before/After Section */
+    .before-after {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      margin: 4rem 0;
+    }
+
+    .before-after-item {
+      padding: 4rem 3rem;
+      border-radius: 16px;
+      text-align: center;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease;
+    }
+
+    .before-after-item:hover {
+      transform: translateY(-8px);
+    }
+
+    .before {
+      background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+      color: white;
+    }
+
+    .after {
+      background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
+      color: #1a1a1a;
+    }
+
+    .before-after-item h3 {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      font-family: 'Georgia', serif;
+    }
+
+    .before-after-item p {
+      font-size: 1.2rem;
+      margin: 1rem 0;
+    }
+
+    /* Flow Diagram */
+    .flow-diagram {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2.5rem;
+      margin: 4rem 0;
+      flex-wrap: wrap;
+      padding: 3rem;
+      background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+      border-radius: 20px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+    }
+
+    .flow-box {
+      padding: 2.5rem 2rem;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+      min-width: 220px;
+      text-align: center;
+      border: 3px solid #667eea;
+      transition: all 0.3s ease;
+    }
+
+    .flow-box:hover {
+      transform: scale(1.05);
+      box-shadow: 0 12px 36px rgba(102, 126, 234, 0.3);
+    }
+
+    .flow-box h3 {
+      font-size: 1.3rem;
+      color: #667eea;
+      margin: 0;
+    }
+
+    .flow-arrow {
+      font-size: 3rem;
+      color: #667eea;
+      font-weight: bold;
+    }
+
+    /* Reflective Prompt */
+    .reflective-prompt {
+      background: linear-gradient(135deg, #fff5f5 0%, #fed7d7 100%);
+      padding: 4rem;
+      border-radius: 16px;
+      margin: 4rem 0;
+      border-left: 6px solid #e53e3e;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+    }
+
+    .reflective-prompt h3 {
+      color: #c53030;
+      margin-bottom: 1.5rem;
+      font-size: 2.2rem;
+    }
+
+    .reflection-textarea {
+      width: 100%;
+      min-height: 200px;
+      padding: 1.5rem;
+      margin-top: 2rem;
+      border: 2px solid #e53e3e;
+      border-radius: 12px;
+      font-family: 'Georgia', serif;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #2c3e50;
+      background: white;
+      resize: vertical;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .reflection-textarea:focus {
+      outline: none;
+      border-color: #c53030;
+      box-shadow: 0 0 0 4px rgba(229, 62, 62, 0.1);
+    }
+
+    .reflection-textarea::placeholder {
+      color: #a0aec0;
+      font-style: italic;
+    }
+
+    .save-indicator {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      color: #718096;
+      font-style: italic;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .save-indicator.saved {
+      color: #38a169;
+    }
+
+    .save-indicator.saving {
+      color: #667eea;
+    }
+
+    /* Sources List */
+    .sources-list {
+      list-style: none;
+      margin: 3rem 0;
+    }
+
+    .sources-list li {
+      padding: 1.5rem 2rem;
+      margin-bottom: 1.5rem;
+      background: rgba(255,255,255,0.1);
+      border-left: 5px solid #667eea;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      color: #e0e0e0;
+      line-height: 1.8;
+    }
+
+    .sources-list li:hover {
+      transform: translateX(10px);
+      background: rgba(255,255,255,0.15);
+    }
+
+    /* Full-width Image */
+    .full-width-image {
+      width: 100%;
+      height: 600px;
+      object-fit: cover;
+      margin: 4rem 0;
+      border-radius: 16px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+      filter: sepia(10%) contrast(1.1);
+      transition: filter 0.3s ease;
+    }
+
+    .full-width-image:hover {
+      filter: sepia(0%) contrast(1.2);
+    }
+
+    /* Wartime Poster */
+    .wartime-poster {
+      background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+      padding: 5rem 3rem;
+      border-radius: 20px;
+      text-align: center;
+      color: white;
+      margin: 4rem 0;
+      box-shadow: 0 12px 48px rgba(0,0,0,0.3);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .wartime-poster::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      width: 200%;
+      height: 200%;
+      background: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 10px,
+        rgba(255,255,255,0.03) 10px,
+        rgba(255,255,255,0.03) 20px
+      );
+      animation: slide 20s linear infinite;
+    }
+
+    @keyframes slide {
+      0% { transform: translate(0, 0); }
+      100% { transform: translate(50px, 50px); }
+    }
+
+    .wartime-poster h3 {
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+      color: white;
+      position: relative;
+      z-index: 1;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+    }
+
+    .wartime-poster p {
+      font-size: 1.4rem;
+      opacity: 0.95;
+      color: white;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 3rem;
+      }
+
+      .hero h2 {
+        font-size: 1.8rem;
+      }
+
+      .section {
+        padding: 4rem 1.5rem;
+      }
+
+      .section h2 {
+        font-size: 2.2rem;
+      }
+
+      .before-after {
+        grid-template-columns: 1fr;
+      }
+
+      .flow-diagram {
+        flex-direction: column;
+        padding: 2rem;
+      }
+
+      .flow-arrow {
+        transform: rotate(90deg);
+      }
+
+      .timeline {
+        padding-left: 2.5rem;
+      }
+
+      .timeline-item {
+        margin-left: 2rem;
+      }
+
+      .image-gallery {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Smooth Scroll */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Image Attribution */
+    .image-attribution {
+      font-size: 0.85rem;
+      color: #718096;
+      font-style: italic;
+      margin-top: 0.5rem;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <!-- HERO / LANDING SECTION -->
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Expendable Childhoods?</h1>
+      <h2>Child Labor and American War</h2>
+      <p>
+        We remember the generals and the presidents. We rarely remember the twelve-year-olds in factories
+        or the teenagers in fields whose labor kept wartime economies running. When a nation fights "for
+        the future" but leans on the bodies and time of its children, what does that really mean?
+      </p>
+      <div class="audio-player">
+        <p><strong>Listen:</strong> Audio introduction to this project</p>
+        <audio controls>
+          <source src="audio/intro-narration.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- CENTRAL QUESTION SECTION -->
+    <section class="section">
+      <div class="section-content">
+        <h2>The Question Guiding This Project</h2>
+        <p>
+          When you put the history of child labor in the United States next to U.S. policy on child soldiers,
+          a hard question appears:
+        </p>
+        <blockquote>
+          <strong>Whose childhood has been treated as expendable, and when does that finally change?</strong>
+        </blockquote>
+        <p>
+          This website explores that question in two directions:
+          childhoods sacrificed in American factories and fields during wartime, and childhoods endangered
+          abroad through armed conflicts that still receive U.S. military support.
+        </p>
+      </div>
+    </section>
+
+    <!-- SECTION 1: BACKGROUND – CHILD LABOR AT HOME -->
+    <section class="section">
+      <div class="section-content">
+        <h2>Hidden in Plain Sight: Child Labor at Home</h2>
+        <p>
+          Child labor in American history is often treated as something foreign or distant in time, but
+          expert histories show that it was deeply rooted in the United States well into the twentieth
+          century. Children worked in coal mines, textile mills, canneries, glass factories, and on farms,
+          especially in poorer and immigrant communities where every extra wage mattered.
+        </p>
+        <p>
+          A U.S. Bureau of Labor Statistics history notes that between 1890 and 1910, about
+          <strong>18% of all children ages 10–15</strong> worked. Government investigations documented long
+          hours, low pay, and serious risks to health and schooling. Childhood, for many, was not primarily
+          about school and play; it was about production and survival.
+        </p>
+
+        <img src="https://cdn.loc.gov/service/pnp/nclc/00000/00020r.jpg" alt="Child workers in early 20th century America" class="full-width-image">
+        <p class="image-attribution">Library of Congress, National Child Labor Committee Collection</p>
+
+        <h3>Timeline of Child Labor</h3>
+        <div class="timeline">
+          <div class="timeline-item">
+            <strong>1890–1910:</strong> Industrial child labor peaks (mines, mills, factories). Children as young as 8 worked 12-hour days in dangerous conditions.
+          </div>
+          <div class="timeline-item">
+            <strong>1910s–1930s:</strong> Reform campaigns, investigations, photography expose conditions. Lewis Hine's photographs bring national attention to the issue.
+          </div>
+          <div class="timeline-item">
+            <strong>New Deal era:</strong> Federal labor standards raise minimum working ages and limit hours. Fair Labor Standards Act of 1938 establishes national child labor protections.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: SEEING THE CHILDREN – VISUAL & GESTURAL -->
+    <section class="section">
+      <div class="section-content">
+        <h2>Seeing the Children: Lewis Hine and Visual Shock</h2>
+        <p>
+          Statistics alone did not shift public opinion. Photographer <strong>Lewis Hine</strong> worked for
+          the National Child Labor Committee, capturing children operating heavy machines, carrying loads,
+          or standing outside factories late at night. His images were designed as activist tools, not just
+          art: they made it impossible to ignore the contrast between small bodies and harsh industrial spaces.
+        </p>
+
+        <div class="image-gallery">
+          <div class="gallery-item">
+            <img src="https://cdn.loc.gov/service/pnp/nclc/00000/00020r.jpg" alt="Breaker boy, coal mine - Lewis Hine photograph">
+            <div class="gallery-caption">Breaker boy, coal mine. Lewis Hine documented children as young as 8 working in dangerous coal breakers, sorting coal by hand.</div>
+          </div>
+          <div class="gallery-item">
+            <img src="https://cdn.loc.gov/service/pnp/nclc/00000/00030r.jpg" alt="Spinner in a cotton mill - Lewis Hine photograph">
+            <div class="gallery-caption">Spinner in a cotton mill. Young girls worked long hours in textile mills, exposed to dangerous machinery and cotton dust.</div>
+          </div>
+          <div class="gallery-item">
+            <img src="https://cdn.loc.gov/service/pnp/nclc/00000/00040r.jpg" alt="Newsboy on a wet street at night - Lewis Hine photograph">
+            <div class="gallery-caption">Newsboy on a wet street at night. Child news vendors worked late into the night, often in harsh weather conditions.</div>
+          </div>
+        </div>
+        <p class="image-attribution">All images: Library of Congress, National Child Labor Committee Collection, Lewis Hine photographs</p>
+
+        <div class="audio-player" style="background: #f0f4ff; color: #2c3e50; margin-top: 3rem;">
+          <h3>Audio: Reflecting on a Photo</h3>
+          <p>
+            Record yourself describing one Hine photograph for 30–60 seconds:
+            what you see, what details stand out, and how it changes your understanding of "child labor."
+          </p>
+          <audio controls>
+            <source src="audio/photo-reflection.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: WAR, PATRIOTISM, AND WORK -->
+    <section class="section">
+      <div class="section-content">
+        <h2>"Doing Their Part": Children, War, and Patriotism</h2>
+        <p>
+          When the United States entered World War I and later World War II, earlier child-labor debates
+          collided with wartime pressure. Children and teenagers continued to work in agriculture and
+          certain industries, especially where family labor had always been central and regulations were
+          weak or poorly enforced.
+        </p>
+        <p>
+          At the same time, wartime propaganda encouraged youth to "do their part" by working in fields,
+          buying war stamps, or joining home-front programs. Posters framed their labor as patriotic, but
+          beneath the flag-colored language, familiar tensions remained: families needed income, production
+          targets had to be met, and the heaviest burdens often fell on poor, rural, or marginalized children.
+        </p>
+
+        <img src="https://cdn.loc.gov/service/pnp/fsa/8b00000/8b01000/8b01000r.jpg" alt="Children working in fields during World War II" class="full-width-image">
+        <p class="image-attribution">Farm Security Administration, Library of Congress - Children working in agricultural fields during wartime</p>
+
+        <div class="wartime-poster">
+          <h3>"Do Your Part – At What Cost?"</h3>
+          <p>Child labor did not disappear when America went to war.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: POLICY SHIFT – FROM FACTORIES TO LAWS -->
+    <section class="section">
+      <div class="section-content">
+        <h2>Rewriting Childhood: The New Deal and Labor Laws</h2>
+        <p>
+          The Great Depression and New Deal created a new argument: why should children be working when
+          adults were unemployed? Reformers used the crisis to push for national standards limiting child
+          labor. Federal laws raised minimum working ages, capped hours, and banned hazardous work for
+          minors in many industries, even though agriculture remained loosely regulated.
+        </p>
+        <p>
+          These changes did not erase all child labor, but they shifted the cultural baseline. Childhood
+          became increasingly associated with school and protection rather than full-time work. On paper,
+          the United States seemed to be moving away from treating children as just another part of the
+          labor force.
+        </p>
+
+        <div class="before-after">
+          <div class="before-after-item before">
+            <h3>Before</h3>
+            <p style="font-size: 1.4rem; margin-top: 1.5rem; font-weight: 600;">18% of children working</p>
+            <p style="margin-top: 1.5rem;">Factory icons, dark tones</p>
+            <p style="margin-top: 1.5rem;">Childhood as production</p>
+            <p style="margin-top: 1.5rem;">No federal protections</p>
+          </div>
+          <div class="before-after-item after">
+            <h3>After</h3>
+            <p style="font-size: 1.4rem; margin-top: 1.5rem; font-weight: 600;">Childhood + education as a right</p>
+            <p style="margin-top: 1.5rem;">School icons, lighter tones</p>
+            <p style="margin-top: 1.5rem;">Protection and learning</p>
+            <p style="margin-top: 1.5rem;">Fair Labor Standards Act (1938)</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: LOOKING OUTWARD – CHILD SOLDIERS & U.S. POLICY -->
+    <section class="section">
+      <div class="section-content">
+        <h2>Beyond Borders: Child Soldiers and American Power</h2>
+        <p>
+          The story does not end at U.S. borders. Today, American foreign and security policy collides with
+          another form of child labor: children recruited into armed forces and groups. International law
+          treats this as one of the <strong>worst forms of child labor</strong>, because it exposes children to
+          extreme violence, coercion, and long-term physical and psychological harm.
+        </p>
+        <p>
+          On one hand, the United States officially recognizes this problem. The
+          <em>Child Soldiers Prevention Act (CSPA) of 2008</em> is supposed to restrict certain types of
+          military assistance and arms sales to governments that recruit or use child soldiers. The State
+          Department publishes annual lists of such countries.
+        </p>
+        <p>
+          On the other hand, research from policy organizations shows that U.S. presidents have repeatedly
+          used waivers to keep assistance flowing to many of these same governments, citing national-security
+          interests. One study estimates that about <strong>97% of arms sales and assistance that could have
+          been blocked under the CSPA has gone ahead anyway</strong>. This means U.S. policy often helps sustain
+          the environments in which children are pulled into conflict.
+        </p>
+
+        <div class="flow-diagram">
+          <div class="flow-box">
+            <h3>U.S. Arms & Military Aid</h3>
+          </div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-box">
+            <h3>Partner Governments (some on CSPA list)</h3>
+          </div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-box">
+            <h3>Armed Groups Using Child Soldiers</h3>
+          </div>
+        </div>
+        <p style="text-align: center; font-size: 1.5rem; font-weight: 600; color: #667eea; margin-top: 3rem; font-style: italic;">
+          Where should the line be drawn?
+        </p>
+      </div>
+    </section>
+
+    <!-- SECTION 6: SYNTHESIS – CONNECTING THE TWO STORIES -->
+    <section class="section">
+      <div class="section-content">
+        <h2>Two Histories, One Pattern</h2>
+        <p>
+          Putting these histories together changes how the story of child labor in wartime looks. At home,
+          the United States eventually labeled industrial child labor a moral and political problem and
+          passed laws to restrict it. Abroad, the same country still makes policy choices that, according to
+          experts, help maintain conflicts where children are used as soldiers.
+        </p>
+        <p>
+          The pattern is not just hypocrisy; it is about what gets treated as non-negotiable. In both cases,
+          children's lives and futures become flexible when they collide with economic or strategic priorities:
+          production then, security now.
+        </p>
+
+        <div class="reflective-prompt">
+          <h3>Reflective Prompt</h3>
+          <p style="font-size: 1.3rem; line-height: 1.8;">
+            Imagine you could draw one clear policy line today, the way child-labor reformers did a century
+            ago. What would it be?
+          </p>
+          <textarea 
+            id="reflection-input" 
+            class="reflection-textarea" 
+            placeholder="Type your reflection here... Your response will be automatically saved as you type."
+          ></textarea>
+          <div id="save-indicator" class="save-indicator">
+            <span id="save-text">Your response is saved automatically</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7: CONCLUSION & FUTURE DIRECTIONS -->
+    <section class="section">
+      <div class="section-content">
+        <h2>Conclusion: What Does It Mean to Protect Childhood?</h2>
+        <p>
+          Expert research on child labor and health shows that its harms are ongoing: physical strain,
+          injury, psychological stress, disrupted education. Whether in fields, factories, or armed groups,
+          children pay high costs when their work is treated as necessary for someone else's goals.
+        </p>
+        <p>
+          At the same time, debates about waivers, arms exports, and child soldiers are still active in policy
+          circles. The United States has already shown that it can rethink childhood once, shifting from an
+          economy that normalizes child labor to a model that promises education and protection—at least
+          within its own borders.
+        </p>
+        <p>
+          That raises the project's central question again: will that same shift in thinking ever fully extend
+          beyond U.S. borders? Ending "child labor in wartime" cannot just mean pushing it out of sight to
+          other countries. It means refusing to treat any child's life as an acceptable cost of production or
+          security.
+        </p>
+
+        <div class="audio-player" style="background: #f0f4ff; color: #2c3e50; margin-top: 3rem;">
+          <p><strong>Optional Audio:</strong> Record a 1–2 minute spoken reflection answering:</p>
+          <blockquote style="background: white; margin: 1.5rem 0;">
+            "After learning this history, what responsibilities do I think the U.S. has, both at home and abroad,
+            toward children in wartime?"
+          </blockquote>
+          <audio controls>
+            <source src="audio/final-reflection.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOURCES SECTION -->
+    <section class="section" style="background: linear-gradient(135deg, #1a1a1a 0%, #2d3748 100%); color: white;">
+      <div class="section-content">
+        <h2 style="color: white; border-bottom: 3px solid #667eea; padding-bottom: 1.5rem;">Sources & Further Reading</h2>
+        <p style="color: #e0e0e0; font-size: 1.2rem; margin-bottom: 2rem;">
+          This project draws on expert histories, policy reports, and child-health research. Key sources include:
+        </p>
+        <ul class="sources-list">
+          <li>
+            U.S. Bureau of Labor Statistics, "History of Child Labor in the United States — Part 1:
+            Little Children Working."
+          </li>
+          <li>
+            Janina N. Kues et al., "Child Labor and Health: A Systematic Literature Review of the
+            Impacts of Child Labor on Child Health."
+          </li>
+          <li>
+            Vanessa May, "Remembering America's Child Labor Crisis and the Women Reformers Who Opposed It."
+          </li>
+          <li>
+            U.S. Department of State, reports under the Child Soldiers Prevention Act (CSPA) of 2008.
+          </li>
+          <li>
+            Stimson Center, "Waiving Away the Problem: How the United States' Use of Child Soldiers
+            Prevention Act Waivers Has Undermined Efforts to End the Use of Child Soldiers."
+          </li>
+          <li>
+            UN Committee on the Rights of the Child, statements urging the U.S. to stop exporting arms
+            to countries with child soldiers.
+          </li>
+          <li>
+            Library of Congress and Cantor Arts Center materials on Lewis Hine's child-labor photography.
+          </li>
+        </ul>
+        <p style="font-size: 1rem; margin-top: 3rem; color: #b0b0b0; font-style: italic;">
+          For formal citation, you can reuse and adapt the Works Cited page from your essay on this site.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Reflective prompt auto-save functionality
+    const reflectionInput = document.getElementById('reflection-input');
+    const saveIndicator = document.getElementById('save-indicator');
+    const saveText = document.getElementById('save-text');
+    const STORAGE_KEY = 'reflective-prompt-response';
+
+    // Load saved response on page load
+    window.addEventListener('DOMContentLoaded', () => {
+      const savedResponse = localStorage.getItem(STORAGE_KEY);
+      if (savedResponse) {
+        reflectionInput.value = savedResponse;
+        updateSaveIndicator('saved');
+      }
+    });
+
+    // Auto-save as user types
+    let saveTimeout;
+    reflectionInput.addEventListener('input', () => {
+      clearTimeout(saveTimeout);
+      updateSaveIndicator('saving');
+      
+      saveTimeout = setTimeout(() => {
+        const response = reflectionInput.value;
+        localStorage.setItem(STORAGE_KEY, response);
+        updateSaveIndicator('saved');
+      }, 500); // Save 500ms after user stops typing
+    });
+
+    // Update save indicator
+    function updateSaveIndicator(status) {
+      saveIndicator.className = 'save-indicator ' + status;
+      
+      if (status === 'saving') {
+        saveText.textContent = 'Saving...';
+      } else if (status === 'saved') {
+        saveText.textContent = '✓ Saved automatically';
+      }
+    }
+
+    // Show indicator when user focuses on textarea
+    reflectionInput.addEventListener('focus', () => {
+      const response = reflectionInput.value;
+      if (response) {
+        updateSaveIndicator('saved');
+      }
+    });
+  </script>
+</body>
+</html>
