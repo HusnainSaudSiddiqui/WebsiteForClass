@@ -245,59 +245,47 @@
 
     /* Timeline */
     .timeline {
-      display: flex;
-      flex-direction: column;
-      gap: 3rem;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(240px, 1fr));
+      gap: 2.5rem;
       margin: 4rem 0;
-      position: relative;
-      padding-left: 4rem;
-    }
-
-    .timeline::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0;
-      bottom: 0;
-      width: 4px;
-      background: linear-gradient(180deg, #667eea, #764ba2, #667eea);
-      border-radius: 2px;
     }
 
     .timeline-item {
-      position: relative;
-      padding: 2.5rem;
+      padding: 2.5rem 2rem;
       background: white;
-      border-radius: 16px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
-      margin-left: 3rem;
+      border-radius: 18px;
+      box-shadow: 0 10px 28px rgba(15,23,42,0.12);
+      border-top: 6px solid #667eea;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      min-height: 220px;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .timeline-item:hover {
-      transform: translateX(10px);
-      box-shadow: 0 12px 32px rgba(0,0,0,0.18);
+      transform: translateY(-6px);
+      box-shadow: 0 16px 36px rgba(15,23,42,0.18);
     }
 
-    .timeline-item::before {
-      content: '';
-      position: absolute;
-      left: -3.5rem;
-      top: 2.5rem;
-      width: 20px;
-      height: 20px;
-      background: #667eea;
-      border-radius: 50%;
-      border: 4px solid white;
-      box-shadow: 0 0 0 4px #667eea, 0 4px 12px rgba(0,0,0,0.2);
+    .timeline-era {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+      color: #94a3b8;
+      font-weight: 700;
     }
 
-    .timeline-item strong {
-      display: block;
-      font-size: 1.4rem;
-      color: #667eea;
-      margin-bottom: 0.8rem;
+    .timeline-title {
+      font-size: 1.45rem;
+      color: #1a202c;
       font-family: 'Georgia', serif;
+    }
+
+    .timeline-text {
+      color: #4a5568;
+      line-height: 1.7;
     }
 
     /* Before/After Section */
@@ -485,54 +473,118 @@
 
     /* Wartime Poster */
     .wartime-poster {
-      background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
-      padding: 5rem 3rem;
-      border-radius: 20px;
-      text-align: center;
-      color: white;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2.5rem;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 24px;
+      padding: 3rem;
       margin: 4rem 0;
-      box-shadow: 0 12px 48px rgba(0,0,0,0.3);
-      position: relative;
-      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(15,23,42,0.08);
     }
 
-    .wartime-poster::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      right: -50%;
-      width: 200%;
-      height: 200%;
-      background: repeating-linear-gradient(
-        45deg,
-        transparent,
-        transparent 10px,
-        rgba(255,255,255,0.03) 10px,
-        rgba(255,255,255,0.03) 20px
-      );
-      animation: slide 20s linear infinite;
+    .poster-copy {
+      flex: 2 1 360px;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      color: #1a202c;
     }
 
-    @keyframes slide {
-      0% { transform: translate(0, 0); }
-      100% { transform: translate(50px, 50px); }
+    .poster-tag {
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #667eea;
     }
 
-    .wartime-poster h3 {
-      font-size: 3rem;
-      margin-bottom: 1.5rem;
-      color: white;
-      position: relative;
-      z-index: 1;
-      text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+    .poster-copy h3 {
+      font-size: 2.5rem;
+      margin: 0;
+      color: #1a202c;
     }
 
-    .wartime-poster p {
-      font-size: 1.4rem;
-      opacity: 0.95;
-      color: white;
-      position: relative;
-      z-index: 1;
+    .poster-lede {
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: #2d3748;
+    }
+
+    .poster-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .poster-list li {
+      display: flex;
+      gap: 0.75rem;
+      line-height: 1.6;
+      font-size: 1rem;
+      color: #4a5568;
+    }
+
+    .poster-list li::before {
+      content: '▹';
+      color: #ed8936;
+      font-weight: 700;
+    }
+
+    .poster-footnote {
+      font-size: 0.85rem;
+      color: #718096;
+    }
+
+    .poster-details {
+      flex: 1 1 260px;
+      background: #f7fafc;
+      border-radius: 18px;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 1.5rem;
+      border: 1px solid #e2e8f0;
+    }
+
+    .poster-highlight {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 1.25rem;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 8px 20px rgba(103,132,187,0.12);
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .poster-highlight .stat-label {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #4a5568;
+    }
+
+    .poster-highlight .stat-value {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #1a202c;
+    }
+
+    .poster-highlight .stat-note {
+      font-size: 0.85rem;
+      color: #718096;
+    }
+
+    .poster-note {
+      font-size: 0.95rem;
+      color: #4a5568;
+      line-height: 1.6;
     }
 
     /* Responsive */
@@ -553,6 +605,15 @@
         font-size: 2.2rem;
       }
 
+      .wartime-poster {
+        flex-direction: column;
+        padding: 2.5rem 1.75rem;
+      }
+
+      .poster-details {
+        width: 100%;
+      }
+
       .before-after {
         grid-template-columns: 1fr;
       }
@@ -567,11 +628,12 @@
       }
 
       .timeline {
-        padding-left: 2.5rem;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
       }
 
       .timeline-item {
-        margin-left: 2rem;
+        min-height: auto;
       }
 
       .image-gallery {
@@ -652,19 +714,34 @@
           about school and play; it was about production and survival.
         </p>
 
-        <img src="https://cdn.loc.gov/service/pnp/nclc/00000/00020r.jpg" alt="Child workers in early 20th century America" class="full-width-image">
-        <p class="image-attribution">Library of Congress, National Child Labor Committee Collection</p>
+        <img src="https://st.perplexity.ai/estatic/0b226c450798410ac541646c86ec31afd840e5beab817a5d84fa821e7db61981ec84c3b4a3f072a7a2e1899c9fb06c6e39b329b11bd8ae95516dad5137a8c7cd54240aa2c1c61cc761d3feeed5a2f4be40b6551ae0715b6cb988841180b8ac19" alt="Young girl working during early twentieth century child labor era" class="full-width-image">
+        <p class="image-attribution">Image via user-provided archival link</p>
 
         <h3>Timeline of Child Labor</h3>
         <div class="timeline">
           <div class="timeline-item">
-            <strong>1890–1910:</strong> Industrial child labor peaks (mines, mills, factories). Children as young as 8 worked 12-hour days in dangerous conditions.
+            <p class="timeline-era">1890–1910</p>
+            <p class="timeline-title">Industrial child labor peaks</p>
+            <p class="timeline-text">
+              Mines, mills, and factories drew in children as young as eight for twelve-hour shifts, often with no
+              schooling and few safety protections.
+            </p>
           </div>
           <div class="timeline-item">
-            <strong>1910s–1930s:</strong> Reform campaigns, investigations, photography expose conditions. Lewis Hine's photographs bring national attention to the issue.
+            <p class="timeline-era">1910s–1930s</p>
+            <p class="timeline-title">Reformers expose the cost</p>
+            <p class="timeline-text">
+              Investigations and Lewis Hine’s photography made the public confront child labor’s realities and
+              built momentum for federal action.
+            </p>
           </div>
           <div class="timeline-item">
-            <strong>New Deal era:</strong> Federal labor standards raise minimum working ages and limit hours. Fair Labor Standards Act of 1938 establishes national child labor protections.
+            <p class="timeline-era">New Deal era</p>
+            <p class="timeline-title">National standards arrive</p>
+            <p class="timeline-text">
+              The Fair Labor Standards Act of 1938 finally set minimum ages, limited hours, and signaled a shift
+              toward seeing childhood as a protected stage of life.
+            </p>
           </div>
         </div>
       </div>
@@ -732,8 +809,39 @@
         <p class="image-attribution">Farm Security Administration, Library of Congress - Children working in agricultural fields during wartime</p>
 
         <div class="wartime-poster">
-          <h3>"Do Your Part – At What Cost?"</h3>
-          <p>Child labor did not disappear when America went to war.</p>
+          <div class="poster-copy">
+            <p class="poster-tag">Home-front reality check</p>
+            <h3>"Do Your Part – At What Cost?"</h3>
+            <p class="poster-lede">
+              Patriotic posters rallied kids to pick crops, buy stamps, and fill factory gaps.
+            </p>
+            <p>
+              The messaging sounded noble. In practice, low-income families stretched longer shifts,
+              schooling halted for harvests, and dangerous piecework stayed exempt from wartime protections.
+            </p>
+            <ul class="poster-list">
+              <li>Seasonal farm drives pulled entire classrooms into the fields for weeks.</li>
+              <li>War production waivers let factories ignore hour limits with parent signatures.</li>
+              <li>Rural Black, Mexican, and Indigenous children filled the hardest, least-paid jobs.</li>
+            </ul>
+            <p class="poster-footnote">Sources: War Manpower Commission bulletins; Library of Congress oral histories.</p>
+          </div>
+          <div class="poster-details">
+            <div class="poster-highlight">
+              <span class="stat-label">Victory Farm Volunteers (1944)</span>
+              <span class="stat-value">1M+</span>
+              <span class="stat-note">teens issued labor cards nationwide</span>
+            </div>
+            <div class="poster-highlight">
+              <span class="stat-label">Typical harvest day</span>
+              <span class="stat-value">10 hrs</span>
+              <span class="stat-note">reported in USDA field logs</span>
+            </div>
+            <div class="poster-note">
+              Officials praised a "Victory Army of Youth," but most of that labor came from families already
+              stretched thin by rationing and low wages.
+            </div>
+          </div>
         </div>
       </div>
     </section>
